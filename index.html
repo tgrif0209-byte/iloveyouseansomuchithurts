@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verity Chat</title>
+    <style>
+        body { background-color: #121212; color: #00ff00; font-family: monospace; padding: 20px; }
+        #output { white-space: pre-wrap; margin-bottom: 20px; min-height: 150px; overflow-y: auto; border: 1px solid #00ff00; padding: 10px; }
+        input { background: #000; color: #00ff00; border: 1px solid #00ff00; padding: 10px; width: 80%; font-family: monospace; }
+        button { background: #00ff00; color: #000; border: none; padding: 10px; font-family: monospace; cursor: pointer; }
+        p{ color:#121212 }
+    </style>
+</head>
+<body>
+    <div id="output">type hello for info, have fun.<br></div>
+    <input type="text" id="userInput" placeholder="Type something here..." autofocus>
+    <button onclick="handleInput()">Send</button>
+
+    <script>
+        const inputField = document.getElementById("userInput");
+        const outputDiv = document.getElementById("output");
+
+        inputField.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                handleInput();
+            }
+        });
+
+        function handleInput() {
+            const text = inputField.value.trim().toLowerCase();
+            // Replicates the clear screen sequence (\033[H\033[J)
+            outputDiv.innerHTML = "";
+            appendOutput(`> ${inputField.value ? inputField.value : "[Empty Input]"}`);
+            let response = getResponse(text);
+            appendOutput(response);
+            inputField.value = "";
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+
+        function appendOutput(message) {
+            outputDiv.innerHTML += `${message}<br>`;
+        }
+
+        function getResponse(text) {
+            if (text === "hi") return "HOIIIII";
+            if (text === "i love you") return "I LOVE YOU TOOOOO";
+            if (text === "9/4/26") return '<a href="date.html">your doing so good</a>';
+            if (text === "good boy") return "yk its not me its a script i wrote but i knew you would say that pawn";
+            if (text === "i wuv u") return "fact, got, fact got";
+            if (text === "fuck you") return ":(";
+            if (text === "oni") return "no...";
+            if (text === "leon") return "I HATE THAT BITCH";
+            if (text === "furry") return "you had a gacha phase";
+            if (text === "femboy") return "uwu im such a baka punish me master neh~ ... im killing myslef";
+            if (text === "kys") return "okay bet only if you join";
+            if (text === "puppy") return "wrong, im python in a text box Ssssssss...";
+            if (text === "secret") return "its not going to be that easy";
+            if (text === "uwu") return "im so baka uwu silly cars :3";
+            if (text === "im breaking up with you") return "i dont consent";
+            if (text === "undertale") return "🙈 🙉 🙊 one was fogotten but you never needed to know it becuse to me you cant";
+            if (text === "do no evil") return "❄︎☟︎☜︎ ☞︎✋︎☼︎💧︎❄︎ ❄︎☟︎✋︎☠︎☝︎ ✡︎⚐︎🕆︎ ☝︎✌︎✞︎☜︎ 💣︎☜︎ 🕈︎✌︎💧︎ ✌︎ 😐︎✋︎💧︎💧︎ ✌︎☠︎👎︎ ✋︎☠︎ ❄︎☟︎❄︎💧︎ ☹︎☜︎❄︎❄︎☜︎☼︎ ✋︎ ☝︎✋︎✞︎☜︎ ✡︎⚐︎🕆︎ ✌︎ ☝︎☼︎☜︎☜︎❄︎✋︎☠︎☝︎ 🕈︎☟︎✌︎❄︎ 🕈︎✌︎💧︎ ✋︎❄︎";
+            if (text === "verity") return "HELLOOOO, my names verity your personal helper freind";
+            if (text === "faggot") return "fuck me- I MEAN YOU";
+            if (text === "hello world") return "Ummm yk what error fuck you";
+            if (text === "you hate me") return "404 lie error";
+            if (text === "mdoo") return "MMDOOO";
+            if (text === "i miss you") return "i miss you always untill we are together again";
+            if (text === "terrence") return "sean";
+            if (text === "") return "try typing";
+            if (text === "help") return "no";
+            if (text === "cutie") return "handsome";
+            if (text === "how was your day") return "im a script i dont know what a day is";
+            if (text === ":3") return ":3";
+            if (text === "hello") return "HOIIII this is a lil thing ive made, feel free to type what you want so make sure that its spelled right and no caps type key for evrything it can do (mostly). to type somthing else in just press enter again, have fun";
+            if (text === "somthing else") return "oh we got a little comedian here huh";
+            if (text === "job") return "you cant make me";
+            if (text === "67") return "ill kill you";
+            if (text === "ligma") return "balls";
+            if (text === "guess what") return "Ooo what is it i hope its somthig cool";
+            if (text === "chicken butt") return ":(";
+            if (text === "kirk") return "kirky";
+            if (text === "im fat") return "NO YOUR NOT";
+            if (text === "key") return "hi, i love you, good boy, i wuv u, fuck you, oni, leon, furry, femboy, kys, puppy, secret, uwu, im breaking up with you, verity, faggot, hello world, you hate me, mdoo, i miss you, terrence, help, cutie, how was your day, :3, hello, somthing else, job, 67, ligma, guess what, chicken butt, kirk, im fat, quest, i wanna cuddle, and there is more but you will have to find that";
+            if (text == "5201314") return '<a href="5201314.html">and all eternity</a>';
+            if (text === "2653") return "you will always be my handsome loving boy and ill forever be yours i made a promise and that will never change but what dose change is how i show it some times you have to look for the letters in between the message and nothing might mean evryting or whats missing from it 5201314";
+            if (text === "8945") return "we cant change the past but we can discover more about ourselfs and evrything around us just by looking back at what we really needed, even though you might take some time to find what we are looking for, and for me it was some one who loves me, all you have to do is have patince, look past going back and exept the future, look back to the first time i told you i was proud of you";
+            if (text === "will you marry me") return "you mean so much to me and i want you to know how much you mean to me before i had you i was starving myself to look perfect for horable people who saw me less then them using me to get what they wanted and only giving me fake love when they thought i did good enough but your diffrint you dont give me love based on how much you think i did good enough you give me hope for the future when before i thought there was no hope and i didint want to live on with nothing to live for and i wanted to show that through the best way i can making somthing from scratch do you take me as your husband (to take my offer say i do)";
+            if (text === "i do") return "i love you so much and i just want to show you how much i really love you this is the end of what i had made and i really hope you liked this thing i made you but there will never be a end for the love i have for you out of any living being i pick you and ill stad with that choice till the end of time becuse thats how long i want to spend with you I LOOOVE YOU SOSOSOO MUCHHH and feel free to look at all the extras by typing keys";
+            if (text === "quest") return "you are a humen that has fallin into the under ground what will you do a. cry b. go farward c. die";
+           if (text === "c") return "you died";
+           if (text === "a") return "crying is against the rules";
+           if (text === "b") return "you try to walk but you realize and look down as to your horror you broke your legs in 50 places then die out of shock";
+           if (text === "i wanna cuddle") return "me tooo i wanna cuddle watch movies kinda ill be staring at you the whole time i just want to be near youuu";
+          if (text === "dear love of my life") return "i really dont think that paper tells you how much i love you but i dont think i should just show you the secrets for free soooo quiz timeee say quiz to start";
+          if (text === "quiz") return "YAYAYAYA okay uhhh whats my favrite color";
+          if (text === "perple") return "okay good you should know that now my birth day example what to type 1/11";
+          if (text === "2/10") return "good boy now, whos my favrite person ever (its first name last name include its) ";
+          if (text === "its nesean gilley") return "YAY now for the next part type 2653";
+          if (text === "its charlie kirk") return "counting or not counting incorect quiz anwsers";
+          if (text === "iohyuyw") return "corect your getting used to this but theres somthing you never did and that was my past and my mistaks but all you have to do is forgive me";
+       if (text === "i forgive you") return "no matter what both you and me find out what ive been throu and done dosint matter becuse i have you, you know as soon as i met you it felt like i just started living and anything before that was a robot controling me but one thing i do know is that i love you and i always want to be here with you anyway to continue say 8945";
+            
+            // This is the fallback response for when nothing else matches
+            return "not valid"; 
+        }
+    </script>
+    <br>
+    <h1>HIIII HUNNN</h1>
+    <h2>i didint want to just give you a paper becuse you mean so much more to me then that soooo i made this have fun</h2>
+    <p>the code in your note</p>
+</body>
+</html>
